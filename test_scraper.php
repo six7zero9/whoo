@@ -1,4 +1,4 @@
 <?php
 
-$str = "Hello efridge!";
+$str = "Hello mj!";
 echo $str;
