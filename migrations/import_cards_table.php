@@ -41,5 +41,5 @@ $sql = substr($sql, 0, -1) . ';';
 if (!$result = mysql_query($sql)) {
   echo mysql_error();
 } else {
-  print "All requested data has been successfully added to cards.all_sets_json.\n\n";
+  print "\nAll requested data has been successfully added to cards.all_sets_json.\n\n";
 }
