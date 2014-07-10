@@ -38,12 +38,12 @@ $header = array(
   'Connection: keep-alive',
   'Cache-Control: no-cache'
 );
-  
+
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Manual and automatic date below
 // Top $url is auto .... pretty obvious
-// 
+//
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 $url = 'http://magic.wizards.com/en/articles/archive/mtgo-standings/'.'standard-daily-'.date('Y-m-d', strtotime("yesterday"));
@@ -96,7 +96,7 @@ if(!empty($decklists)){
        $record_pattern = '/\.txt[^-]*-\K\d/';
        preg_match($record_pattern, $decklist, $record);
        $record_string = implode($record);
-    if(!$record_string){  
+    if(!$record_string){
     //remove blank lines
        if($deck_txt = @file_get_contents($decklist)){
         $deck_txt = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "\n", $deck_txt);
@@ -105,17 +105,17 @@ if(!empty($decklists)){
         $deck = array_slice($deck, 1, -1);
         //regex to parse out the count and the card name
         $pattern = '/(\d+)\s(.+)$/';
-       foreach($deck as $card){
-        preg_match($pattern, $card, $matches);
-        $count = $matches[1];
-        $card_name = $matches[2];
+         foreach($deck as $card){
+          preg_match($pattern, $card, $matches);
+          $count = $matches[1];
+          $card_name = $matches[2];
 
-        if(!empty($cards["$card_name"])){
-          $cards["$card_name"] += $count;
-        } else {
-          $cards["$card_name"] = $count;
-        }
-       }
+          if(!empty($cards["$card_name"])){
+            $cards["$card_name"] += $count;
+          } else {
+            $cards["$card_name"] = $count;
+          }
+         }
        }
     }
     else{
@@ -139,7 +139,7 @@ if(!empty($decklists)){
        }
        }
     }
-    }       
+    }
 }
 // sort by count
 arsort($cards);
