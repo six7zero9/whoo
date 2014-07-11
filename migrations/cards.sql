@@ -1,8 +1,10 @@
 CREATE TABLE `cards` (
-  `name` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `set_id` int(11) unsigned DEFAULT NULL,
-  `mana` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `cmc` int(11) unsigned DEFAULT NULL,
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `multiverseid` int(11) unsigned DEFAULT NULL,
+  `type` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `rarity` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `color` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `set_id` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24783 DEFAULT CHARSET=latin1;
