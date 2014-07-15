@@ -1,4 +1,4 @@
-setwd("/Users/efridge123/Desktop/R/Directory/TCGspiders/botg")
+setwd("/Users/efridge123/Dropbox/MTG/TCGspiders/botg")
 
 filenames<-list.files(pattern =".csv")
 
@@ -55,7 +55,12 @@ for( i in 1:length( filenames ) ){
     ##add date column with date from index
     df[,"Date"] <-as.Date(x1, "%m-%d-%Y")
     
+    ##change dir for SQL staging
+    setwd("/Users/efridge123/Dropbox/MTG/SQL staging")
+    
     ##rewrite indexed file with correct format
     write.csv(df, filenames[[i]], row.names = FALSE, na="0" )
     
+    ##change dir back to TCGspider
+    setwd("/Users/efridge123/Dropbox/MTG/TCGspiders/botg")
 }
